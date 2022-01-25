@@ -13,6 +13,7 @@ int SIDE ;
 int MINES ; 
 
 bool isValid(int row, int col)
+
 {
   
     return (row >= 0) && (row < SIDE) &&
@@ -21,6 +22,7 @@ bool isValid(int row, int col)
 
 
 bool isMine (int row, int col, char board[][MAXSIDE])
+
 {
     if (board[row][col] == '*')
         return (true);
@@ -30,6 +32,7 @@ bool isMine (int row, int col, char board[][MAXSIDE])
  
 
 void makeMove(int *x, int *y)
+
 {
     printf("Enter your move, (row, column) -> ");
     scanf("%d %d", x, y);
@@ -38,6 +41,7 @@ void makeMove(int *x, int *y)
 
 
 void printBoard(char myBoard[][MAXSIDE])
+
 {
     int i, j;
  
@@ -62,6 +66,7 @@ void printBoard(char myBoard[][MAXSIDE])
 
 int countAdjacentMines(int row, int col, int mines[][2],
                       char realBoard[][MAXSIDE])
+
 {
  
     int i;
@@ -114,6 +119,8 @@ int countAdjacentMines(int row, int col, int mines[][2],
 
 bool playMinesweeperUtil(char myBoard[][MAXSIDE], char realBoard[][MAXSIDE],
             int mines[][2], int row, int col, int *movesLeft)
+
+
 {
     if (myBoard[row][col] != '-')
         return (false);
@@ -189,6 +196,8 @@ bool playMinesweeperUtil(char myBoard[][MAXSIDE], char realBoard[][MAXSIDE],
 
 
 void placeMines(int mines[][2], char realBoard[][MAXSIDE])
+
+
 {
     bool mark[MAXSIDE*MAXSIDE];
  
@@ -214,6 +223,8 @@ void placeMines(int mines[][2], char realBoard[][MAXSIDE])
 
 
 void initialise(char realBoard[][MAXSIDE], char myBoard[][MAXSIDE])
+
+
 {
     srand(time (NULL));
     for (int i=0; i<SIDE; i++)
@@ -229,6 +240,8 @@ void initialise(char realBoard[][MAXSIDE], char myBoard[][MAXSIDE])
 
 
 void cheatMinesweeper (char realBoard[][MAXSIDE])
+
+
 {
     printf ("The mines locations are-\n");
     printBoard (realBoard);
@@ -237,6 +250,8 @@ void cheatMinesweeper (char realBoard[][MAXSIDE])
 
 
 void replaceMine (int row, int col, char board[][MAXSIDE])
+
+
 {
     for (int i=0; i<SIDE; i++)
     {
@@ -255,6 +270,8 @@ void replaceMine (int row, int col, char board[][MAXSIDE])
 
 
 void playMinesweeper ()
+
+
 {
     
     bool gameOver = false;
@@ -292,6 +309,8 @@ void playMinesweeper ()
 
 
 void chooseDifficultyLevel ()
+
+
 {
  
     int level;
@@ -326,6 +345,8 @@ void chooseDifficultyLevel ()
 
 
 int main()
+
+
 {
     chooseDifficultyLevel ();
  
