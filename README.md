@@ -11,12 +11,15 @@ using namespace std;
  
 int SIDE ; 
 int MINES ; 
+
 bool isValid(int row, int col)
 {
   
     return (row >= 0) && (row < SIDE) &&
            (col >= 0) && (col < SIDE);
 }
+
+
 bool isMine (int row, int col, char board[][MAXSIDE])
 {
     if (board[row][col] == '*')
@@ -32,6 +35,8 @@ void makeMove(int *x, int *y)
     scanf("%d %d", x, y);
     return;
 }
+
+
 void printBoard(char myBoard[][MAXSIDE])
 {
     int i, j;
@@ -53,6 +58,8 @@ void printBoard(char myBoard[][MAXSIDE])
     }
     return;
 }
+
+
 int countAdjacentMines(int row, int col, int mines[][2],
                       char realBoard[][MAXSIDE])
 {
@@ -103,6 +110,8 @@ int countAdjacentMines(int row, int col, int mines[][2],
  
     return (count);
 }
+
+
 bool playMinesweeperUtil(char myBoard[][MAXSIDE], char realBoard[][MAXSIDE],
             int mines[][2], int row, int col, int *movesLeft)
 {
@@ -176,6 +185,9 @@ bool playMinesweeperUtil(char myBoard[][MAXSIDE], char realBoard[][MAXSIDE],
         return (false);
     }
 }
+
+
+
 void placeMines(int mines[][2], char realBoard[][MAXSIDE])
 {
     bool mark[MAXSIDE*MAXSIDE];
@@ -198,6 +210,9 @@ void placeMines(int mines[][2], char realBoard[][MAXSIDE])
  
     return;
 }
+
+
+
 void initialise(char realBoard[][MAXSIDE], char myBoard[][MAXSIDE])
 {
     srand(time (NULL));
@@ -211,12 +226,16 @@ void initialise(char realBoard[][MAXSIDE], char myBoard[][MAXSIDE])
  
     return;
 }
+
+
 void cheatMinesweeper (char realBoard[][MAXSIDE])
 {
     printf ("The mines locations are-\n");
     printBoard (realBoard);
     return;
 }
+
+
 void replaceMine (int row, int col, char board[][MAXSIDE])
 {
     for (int i=0; i<SIDE; i++)
@@ -233,6 +252,8 @@ void replaceMine (int row, int col, char board[][MAXSIDE])
     }
     return;
 }
+
+
 void playMinesweeper ()
 {
     
@@ -268,6 +289,8 @@ void playMinesweeper ()
     }
     return;
 }
+
+
 void chooseDifficultyLevel ()
 {
  
@@ -300,6 +323,8 @@ void chooseDifficultyLevel ()
  
     return;
 }
+
+
 int main()
 {
     chooseDifficultyLevel ();
